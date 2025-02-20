@@ -142,12 +142,10 @@
       <h2 class="subtitle has-text-centered">
       <div class="content has-text-justified">
       <p>
-        <b>Overview of the proposed IMRL approach for food acquisition</b>. 
-        Given the last \(k\) steps of eye-in-hand RGB observations, the system segments the desired food using SAM,
-        extracts features with an encoder (e.g., ResNet-50), and processes them through visual and physical representation modules to learn a joint representation \(z_{vp}\). 
-        A temporal representation module produces \(z_u\) to capture dynamics, while the geometric representation module provides bowl fullness \(l\) and optimal scooping points \((x^∗, y^∗)\). 
-        All these representations are integrated into a multi-dimensional representation \(z\), which, combined with robot proprioception, is used to generate robot actions through a control module.
-       </p>
+        <b>Overview of the MMCD framework</b>. 
+        Each connected vehicle processes its own RGB data, LiDAR data, or both locally to generate feature embeddings, which are then shared among the connected vehicles. 
+        Upon receiving the shared data, the ego vehicle fuses the multi-vehicle, multi-modality features to generate its actions. 
+        During the training stage, LiDAR feature embeddings are used as a Teacher to guide the learning of RGB feature embeddings through cross-modality knowledge distillation. 
       </h2>
     </div>
   </div>
@@ -162,18 +160,12 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Robotic assistive feeding holds significant promise for improving the quality of life for individuals with eating disabilities. 
-            However, acquiring diverse food items under varying conditions and generalizing to unseen food presents unique challenges. 
-            Existing methods that rely on surface-level geometric information (e.g., bounding box and pose) derived from visual cues (e.g., color, shape, and texture) often lacks adaptability and robustness, 
-            especially when foods share similar physical properties but differ in visual appearance. 
-            We employ imitation learning (IL) to learn a policy for food acquisition. 
-            Existing methods employ IL or Reinforcement Learning (RL) to learn a policy based on off-the-shelf image encoders such as ResNet-50.
-            However, such representations are not robust and struggle to generalize across diverse acquisition scenarios.
-            To address these limitations, we propose a novel approach, <b>IMRL (Integrated Multi-Dimensional Representation Learning)</b>, which integrates visual, physical, temporal, and geometric representations to enhance the robustness and generalizability of IL for food acquisition. 
-            Our approach captures food types and physical properties (e.g., solid, semi-solid, granular, liquid, and mixture), models temporal dynamics of acquisition actions, and introduces geometric information to determine optimal scooping points and assess bowl fullness.
-            IMRL enables IL to adaptively adjust scooping strategies based on context, improving the robot's capability to handle diverse food acquisition scenarios. 
-            Experiments on a real robot demonstrate our approach's robustness and adaptability across various foods and bowl configurations, including zero-shot generalization to unseen settings.
-            Our approach achieves improvement up to <b>35</b>% in success rate compared with the best-performing baseline.
+            Autonomous driving has advanced significantly, but challenges persist in accident-prone environments where robust decision-making is crucial. 
+            A single vehicle's limited sensor range and obstructed views increase the likelihood of accidents. Multi-vehicle connected systems and multi-modality data approaches, leveraging RGB images and LiDAR point clouds, have emerged as promising solutions. 
+            However, existing methods often assume the availability of all data modalities and connected vehicles during both training and testing, which is impractical due to potential sensor failures or missing connected vehicles. 
+            To address these challenges, we introduce a novel framework <b>MMCD (Multi-Modality Collaborative Decision-making)</b> for connected autonomous driving. 
+            Our framework fuses multi-modal observations from ego and collaborative vehicles to enhance decision-making under challenging conditions. To ensure robust performance when certain data modalities are unavailable during testing, we propose an approach based on cross-modality knowledge distillation with a teacher-student model structure. 
+            The teacher model is trained with multiple data modalities, while the student model is designed to operate effectively with reduced modalities. Our approach achieves up to <b>20.7</b>% improvement in driving safety compared to existing methods, demonstrating its effectiveness. 
           </p>
         </div>
       </div>
@@ -270,7 +262,7 @@ for food acquisition.
  <!-- Experiments -->
   <section class="hero">
   <div style="text-align: center; font-size: 28px; font-weight: bold; margin-bottom: 10px;  margin-top: 30px;">
-    IMRL (Seen)
+    IMRL (Seen) IMRL (Seen) IMRL (Seen)
   </div>
 
   <!-- First row of videos from Google Drive -->
