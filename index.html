@@ -350,7 +350,7 @@ for food acquisition.
   </div>
   </section>
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
     <title>Performance Comparison Table</title>
@@ -508,6 +508,186 @@ for food acquisition.
             <td><strong>9.3%</strong></td>
         </tr>
     </table>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Performance Comparison Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f8f8;
+        }
+        table {
+            width: 60%; /* Reduce width */
+            border-collapse: collapse;
+            margin: auto;
+            background-color: white;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 6px; /* Reduce padding to reduce height */
+            text-align: center;
+            font-size: 13px; /* Reduce font size slightly */
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        caption {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 5px; /* Reduce extra spacing */
+            text-align: center;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        td:first-child {
+            text-align: left; /* Align Case A, B, C, D to the left */
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<table>
+    <caption>Performance Comparison of \ours~Against Multiple Baselines</caption>
+    <thead>
+        <tr>
+            <th rowspan="2">Approach</th>
+            <th rowspan="2">PS &darr;</th>
+            <th colspan="2">Overtaking</th>
+            <th colspan="2">Left Turn</th>
+            <th colspan="2">Red Light Violation</th>
+        </tr>
+        <tr>
+            <th>ADR &uarr;</th>
+            <th>IR &uarr;</th>
+            <th>ADR &uarr;</th>
+            <th>IR &uarr;</th>
+            <th>ADR &uarr;</th>
+            <th>IR &uarr;</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>COOPERNAUT</td>
+            <td>65.5KB</td>
+            <td>0.881</td>
+            <td>0.854</td>
+            <td>0.507</td>
+            <td>0.770</td>
+            <td>0.545</td>
+            <td>0.832</td>
+        </tr>
+        <tr>
+            <td>STG</td>
+            <td>4.9KB</td>
+            <td>0.927</td>
+            <td>0.834</td>
+            <td>0.607</td>
+            <td>0.767</td>
+            <td>0.645</td>
+            <td>0.785</td>
+        </tr>
+        <tr>
+            <th colspan="8">Non-collaborative</th>
+        </tr>
+        <tr>
+            <td>Case A (RGB, RGB)</td>
+            <td>1.0KB</td>
+            <td>0.818</td>
+            <td>0.817</td>
+            <td>0.460</td>
+            <td>0.727</td>
+            <td>0.313</td>
+            <td>0.676</td>
+        </tr>
+        <tr>
+            <td>Case B (LiDAR, LiDAR)</td>
+            <td>65.5KB</td>
+            <td>0.823</td>
+            <td>0.813</td>
+            <td>0.406</td>
+            <td>0.722</td>
+            <td>0.402</td>
+            <td>0.735</td>
+        </tr>
+        <tr>
+            <td>Case C (RGB + LiDAR, RGB + LiDAR)</td>
+            <td>66.5KB</td>
+            <td>0.865</td>
+            <td>0.821</td>
+            <td>0.558</td>
+            <td>0.748</td>
+            <td>0.525</td>
+            <td>0.750</td>
+        </tr>
+        <tr>
+            <th colspan="8">Collaborative</th>
+        </tr>
+        <tr>
+            <td>Case A (RGB, RGB)</td>
+            <td>1.0KB</td>
+            <td>0.852</td>
+            <td>0.842</td>
+            <td>0.564</td>
+            <td>0.780</td>
+            <td>0.518</td>
+            <td>0.810</td>
+        </tr>
+        <tr>
+            <td>Case B (LiDAR, LiDAR)</td>
+            <td>65.5KB</td>
+            <td>0.881</td>
+            <td>0.854</td>
+            <td>0.507</td>
+            <td>0.770</td>
+            <td>0.545</td>
+            <td>0.832</td>
+        </tr>
+        <tr>
+            <td>Case C (\ours, RGB + LiDAR, RGB + LiDAR)</td>
+            <td><strong>66.5KB</strong></td>
+            <td><strong>0.960</strong></td>
+            <td><strong>0.868</strong></td>
+            <td><strong>0.733</strong></td>
+            <td><strong>0.812</strong></td>
+            <td><strong>0.688</strong></td>
+            <td><strong>0.858</strong></td>
+        </tr>
+        <tr>
+            <td>Case D (RGB + LiDAR, RGB)</td>
+            <td>1.0KB</td>
+            <td>0.929</td>
+            <td>0.838</td>
+            <td>0.663</td>
+            <td>0.795</td>
+            <td>0.661</td>
+            <td>0.826</td>
+        </tr>
+        <tr>
+            <th>Improvement</th>
+            <td><strong>4.9X</strong></td>
+            <td><strong>3.7%</strong></td>
+            <td><strong>4.1%</strong></td>
+            <td><strong>20.7%</strong></td>
+            <td><strong>5.9%</strong></td>
+            <td><strong>6.6%</strong></td>
+            <td><strong>9.3%</strong></td>
+        </tr>
+    </tbody>
+</table>
+
 </body>
 </html>
 
