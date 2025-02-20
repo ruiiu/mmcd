@@ -355,175 +355,154 @@ for food acquisition.
 <head>
     <title>Performance Comparison Table</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 10px;
         }
         th, td {
             border: 1px solid black;
-            padding: 12px;
+            padding: 8px;
             text-align: center;
-            font-size: 14px;
         }
         th {
             background-color: #f2f2f2;
         }
-        caption {
-            font-size: 16px;
-            font-weight: bold;
-            margin-bottom: 10px;
-            text-align: center;
-        }
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-        tr:hover {
-            background-color: #f1f1f1;
-        }
     </style>
 </head>
 <body>
-
-<section id="experimental-results">
-    <h2>Experimental Results</h2>
-    <p>Here, we present the performance comparison of our approach against multiple baselines.</p>
-
     <table>
-        <caption>Performance Comparison of \ours~Against Multiple Baselines</caption>
-        <thead>
-            <tr>
-                <th rowspan="2">Approach</th>
-                <th rowspan="2">PS &darr;</th>
-                <th colspan="2">Overtaking</th>
-                <th colspan="2">Left Turn</th>
-                <th colspan="2">Red Light Violation</th>
-            </tr>
-            <tr>
-                <th>ADR &uarr;</th>
-                <th>IR &uarr;</th>
-                <th>ADR &uarr;</th>
-                <th>IR &uarr;</th>
-                <th>ADR &uarr;</th>
-                <th>IR &uarr;</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>COOPERNAUT</td>
-                <td>65.5KB</td>
-                <td>0.8813</td>
-                <td>0.8544</td>
-                <td>0.5071</td>
-                <td>0.7696</td>
-                <td>0.5446</td>
-                <td>0.8323</td>
-            </tr>
-            <tr>
-                <td>STG</td>
-                <td>4.9KB</td>
-                <td>0.9265</td>
-                <td>0.8336</td>
-                <td>0.6070</td>
-                <td>0.7670</td>
-                <td>0.6451</td>
-                <td>0.7846</td>
-            </tr>
-            <tr>
-                <th colspan="8">Non-collaborative</th>
-            </tr>
-            <tr>
-                <td>Case A (RGB, RGB)</td>
-                <td>1.0KB</td>
-                <td>0.8179</td>
-                <td>0.8169</td>
-                <td>0.4601</td>
-                <td>0.7268</td>
-                <td>0.3125</td>
-                <td>0.6756</td>
-            </tr>
-            <tr>
-                <td>Case B (LiDAR, LiDAR)</td>
-                <td>65.5KB</td>
-                <td>0.8228</td>
-                <td>0.8134</td>
-                <td>0.4059</td>
-                <td>0.7217</td>
-                <td>0.4018</td>
-                <td>0.7351</td>
-            </tr>
-            <tr>
-                <td>Case C (RGB + LiDAR, RGB + LiDAR)</td>
-                <td>66.5KB</td>
-                <td>0.8654</td>
-                <td>0.8205</td>
-                <td>0.5576</td>
-                <td>0.7483</td>
-                <td>0.5250</td>
-                <td>0.7504</td>
-            </tr>
-            <tr>
-                <th colspan="8">Collaborative</th>
-            </tr>
-            <tr>
-                <td>Case A (RGB, RGB)</td>
-                <td>1.0KB</td>
-                <td>0.8522</td>
-                <td>0.8415</td>
-                <td>0.5642</td>
-                <td>0.7804</td>
-                <td>0.5176</td>
-                <td>0.8104</td>
-            </tr>
-            <tr>
-                <td>Case B (LiDAR, LiDAR)</td>
-                <td>65.5KB</td>
-                <td>0.8813</td>
-                <td>0.8544</td>
-                <td>0.5071</td>
-                <td>0.7696</td>
-                <td>0.5446</td>
-                <td>0.8323</td>
-            </tr>
-            <tr>
-                <td>Case C (\ours, RGB + LiDAR, RGB + LiDAR)</td>
-                <td><strong>66.5KB</strong></td>
-                <td><strong>0.9604</strong></td>
-                <td><strong>0.8676</strong></td>
-                <td><strong>0.7329</strong></td>
-                <td><strong>0.8122</strong></td>
-                <td><strong>0.6875</strong></td>
-                <td><strong>0.8578</strong></td>
-            </tr>
-            <tr>
-                <td>Case D (RGB + LiDAR, RGB)</td>
-                <td>1.0KB</td>
-                <td>0.9288</td>
-                <td>0.8381</td>
-                <td>0.6632</td>
-                <td>0.7946</td>
-                <td>0.6607</td>
-                <td>0.8262</td>
-            </tr>
-            <tr>
-                <th>Improvement</th>
-                <td><strong>4.9X</strong></td>
-                <td><strong>3.7%</strong></td>
-                <td><strong>4.1%</strong></td>
-                <td><strong>20.7%</strong></td>
-                <td><strong>5.9%</strong></td>
-                <td><strong>6.6%</strong></td>
-                <td><strong>9.3%</strong></td>
-            </tr>
-        </tbody>
+        <caption><strong>Performance Comparison of \ours~Against Multiple Baselines</strong></caption>
+        <tr>
+            <th rowspan="2">Approach</th>
+            <th rowspan="2">PS &darr;</th>
+            <th colspan="2">Overtaking</th>
+            <th colspan="2">Left Turn</th>
+            <th colspan="2">Red Light Violation</th>
+        </tr>
+        <tr>
+            <th>ADR &uarr;</th>
+            <th>IR &uarr;</th>
+            <th>ADR &uarr;</th>
+            <th>IR &uarr;</th>
+            <th>ADR &uarr;</th>
+            <th>IR &uarr;</th>
+        </tr>
+        <tr>
+            <td>COOPERNAUT</td>
+            <td>65.5KB</td>
+            <td>0.8813</td>
+            <td>0.8544</td>
+            <td>0.5071</td>
+            <td>0.7696</td>
+            <td>0.5446</td>
+            <td>0.8323</td>
+        </tr>
+        <tr>
+            <td>STG</td>
+            <td>4.9KB</td>
+            <td>0.9265</td>
+            <td>0.8336</td>
+            <td>0.6070</td>
+            <td>0.7670</td>
+            <td>0.6451</td>
+            <td>0.7846</td>
+        </tr>
+        <tr><th colspan="8">Non-collaborative</th></tr>
+        <tr>
+            <td>Case A (RGB, RGB)</td>
+            <td>1.0KB</td>
+            <td>0.8179</td>
+            <td>0.8169</td>
+            <td>0.4601</td>
+            <td>0.7268</td>
+            <td>0.3125</td>
+            <td>0.6756</td>
+        </tr>
+        <tr>
+            <td>Case B (LiDAR, LiDAR)</td>
+            <td>65.5KB</td>
+            <td>0.8228</td>
+            <td>0.8134</td>
+            <td>0.4059</td>
+            <td>0.7217</td>
+            <td>0.4018</td>
+            <td>0.7351</td>
+        </tr>
+        <tr>
+            <td>Case C (RGB + LiDAR, RGB + LiDAR)</td>
+            <td>66.5KB</td>
+            <td>0.8654</td>
+            <td>0.8205</td>
+            <td>0.5576</td>
+            <td>0.7483</td>
+            <td>0.5250</td>
+            <td>0.7504</td>
+        </tr>
+        <tr>
+            <td>Case D (RGB + LiDAR, RGB)</td>
+            <td>1.0KB</td>
+            <td>0.8206</td>
+            <td>0.8322</td>
+            <td>0.5000</td>
+            <td>0.7600</td>
+            <td>0.4175</td>
+            <td>0.7328</td>
+        </tr>
+        <tr><th colspan="8">Collaborative</th></tr>
+        <tr>
+            <td>Case A (RGB, RGB)</td>
+            <td>1.0KB</td>
+            <td>0.8522</td>
+            <td>0.8415</td>
+            <td>0.5642</td>
+            <td>0.7804</td>
+            <td>0.5176</td>
+            <td>0.8104</td>
+        </tr>
+        <tr>
+            <td>Case B (LiDAR, LiDAR)</td>
+            <td>65.5KB</td>
+            <td>0.8813</td>
+            <td>0.8544</td>
+            <td>0.5071</td>
+            <td>0.7696</td>
+            <td>0.5446</td>
+            <td>0.8323</td>
+        </tr>
+        <tr>
+            <td>Case C (\ours, RGB + LiDAR, RGB + LiDAR)</td>
+            <td><strong>66.5KB</strong></td>
+            <td><strong>0.9604</strong></td>
+            <td><strong>0.8676</strong></td>
+            <td><strong>0.7329</strong></td>
+            <td><strong>0.8122</strong></td>
+            <td><strong>0.6875</strong></td>
+            <td><strong>0.8578</strong></td>
+        </tr>
+        <tr>
+            <td>Case D (RGB + LiDAR, RGB)</td>
+            <td>1.0KB</td>
+            <td>0.9288</td>
+            <td>0.8381</td>
+            <td>0.6632</td>
+            <td>0.7946</td>
+            <td>0.6607</td>
+            <td>0.8262</td>
+        </tr>
+        <tr>
+            <th>Improvement</th>
+            <td><strong>4.9X</strong></td>
+            <td><strong>3.7%</strong></td>
+            <td><strong>4.1%</strong></td>
+            <td><strong>20.7%</strong></td>
+            <td><strong>5.9%</strong></td>
+            <td><strong>6.6%</strong></td>
+            <td><strong>9.3%</strong></td>
+        </tr>
     </table>
-</section>
-
 </body>
 </html>
+
 
  <!-- Video Representation -->
 <!--   <section class="hero is-small is-light">
