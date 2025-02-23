@@ -136,13 +136,13 @@
     <div class="hero-body">
       <video poster="" id="tree" autoplay controls muted loop height="100%">
         <!-- Your video here -->
-        <source src="static/videos/IMRL_App.mp4"
+        <source src="static/videos/mmcd_app.mp4"
         type="video/mp4">
       </video>
       <h2 class="subtitle has-text-centered">
       <div class="content has-text-justified">
       <p>
-        <b>Overview of the MMCD framework</b>. 
+        <b>Overview of the MMCD framework with knowledge distillation</b>. 
         Each connected vehicle processes its own RGB data, LiDAR data, or both locally to generate feature embeddings, which are then shared among the connected vehicles. 
         Upon receiving the shared data, the ego vehicle fuses the multi-vehicle, multi-modality features to generate its actions. 
         During the training stage, LiDAR feature embeddings are used as a Teacher to guide the learning of RGB feature embeddings through cross-modality knowledge distillation. 
