@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
   <!-- Replace the content tag with appropriate information -->
-  <meta name="description" content="MMCD: Multi-Modality Collaborative Decision-Making for Connected Autonomy with Knowledge Distillation">
+  <meta name="description" content="MMCD: Multi-Modal Collaborative Decision-Making for Connected Autonomy with Knowledge Distillation">
   <meta property="og:title" content="MMCD"/>
   <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
   <meta property="og:url" content="URL OF THE WEBSITE"/>
@@ -56,7 +56,7 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">MMCD: Multi-Modality Collaborative Decision-Making for Connected Autonomy with Knowledge Distillation
+            <h1 class="title is-1 publication-title">MMCD: Multi-Modal Collaborative Decision-Making for Connected Autonomy with Knowledge Distillation
             </h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
@@ -159,8 +159,8 @@
       <p>
         <b>Overview of the MMCD framework with knowledge distillation</b>. 
         Each connected vehicle processes its own RGB data, LiDAR data, or both locally to generate feature embeddings, which are then shared to the ego vehicle. 
-        Upon receiving the shared data, the ego vehicle fuses the multi-vehicle, multi-modality features to generate its actions. 
-        During the training stage, LiDAR feature embeddings are used as a teacher to guide the learning of RGB feature embeddings through cross-modality knowledge distillation. 
+        Upon receiving the shared data, the ego vehicle fuses the multi-vehicle, multi-modality features to generate its action, such as braking, particulary in accident-prone scenarios. 
+        During the training stage, LiDAR feature embeddings are used as a teacher to guide the learning of RGB feature embeddings through cross-modal knowledge distillation. 
       </h2>
     </div>
   </div>
@@ -176,12 +176,14 @@
         <div class="content has-text-justified">
           <p>
             Autonomous systems have advanced significantly, but challenges persist in accident-prone environments where robust decision-making is crucial. 
-            A single vehicle's limited sensor range and obstructed views increase the likelihood of accidents. Multi-vehicle connected systems and multi-modality approaches, leveraging RGB images and LiDAR point clouds, have emerged as promising solutions. 
+            A single vehicle's limited sensor range and obstructed views increase the likelihood of accidents. Multi-vehicle connected systems and multi-modal approaches, leveraging RGB images and LiDAR point clouds, have emerged as promising solutions. 
             However, existing methods often assume the availability of all data modalities and connected vehicles during both training and testing, which is impractical due to potential sensor failures or missing connected vehicles. 
-            To address these challenges, we introduce a novel framework <b>MMCD (Multi-Modality Collaborative Decision-making)</b> for connected autonomous driving. 
-            Our framework fuses multi-modal observations from ego and collaborative vehicles to enhance decision-making under challenging conditions. To ensure robust performance when certain data modalities are unavailable during testing, we propose an approach based on cross-modality knowledge distillation with a teacher-student model structure. 
-            The teacher model is trained with multiple data modalities, while the student model is designed to operate effectively with reduced modalities. Compared to the best-performing baseline, our approach improves driving safety by up to <b>20.7</b>% in detecting potential accidents in the experiments of <i>connected autonomous driving with ground vehicles</i> 
-            and <i>aerial-ground vehicles collaboration</i>.
+            To address these challenges, we introduce a novel framework <b>MMCD (Multi-Modal Collaborative Decision-making)</b> for connected autonomous driving. 
+            Our framework fuses multi-modal observations from ego and collaborative vehicles to enhance decision-making under challenging conditions. 
+            To ensure robust performance when certain data modalities are unavailable during testing, we propose an approach based on cross-modal knowledge distillation with a teacher-student model structure. 
+            The teacher model is trained with multiple data modalities, while the student model is designed to operate effectively with reduced modalities.
+            In experiments on <i>connected autonomous driving with ground vehicles</i> and <i>aerial-ground vehicles collaboration</i>, our method improves driving safety by up to <b>20.7</b>%, 
+            surpassing the best-existing baseline in detecting potential accidents and making safe driving decisions.
           </p>
         </div>
       </div>
@@ -204,9 +206,9 @@
         <h2 class="subtitle has-text-centered">
           <div class="content has-text-justified">
             <p>
-              <b>A motivating scenario of multi-modality collaborative decision-making (MMCD) for connected autonomous driving.</b> 
+              <b>A motivating scenario of multi-modal collaborative decision-making (MMCD) for connected autonomous driving.</b> 
               The purple dash line represents the exchange of vital information between vehicles, overcoming occlusions and sensor limitations. 
-              <b>MMCD</b> remains robust by leveraging available RGB data to enable the ego vehicle to take brake actions and avoid potential accidents even when its LiDAR is unavailable.
+              <b>MMCD</b> remains robust by leveraging available RGB data to enable the ego vehicle to take brake actions and avoid accidents even when its LiDAR is unavailable.
       </div>
         </h2>
     </div>
@@ -406,7 +408,7 @@ for food acquisition.
 <body>
     <table>
         <caption><strong>Performance comparison of MMCD against multiple baselines for connected autonomous driving with ground vehicles</strong>. 
-          <b>MMCD</b> shows superior performance across all evaluated scenarios and the improvement relative to STG is shown in bold-face font.</caption>
+          <b>MMCD</b> shows superior performance across all evaluated scenarios and the improvement relative to STG is shown in bold.</caption>
         <tr>
             <th rowspan="2">Approach</th>
             <th rowspan="2">PS &darr;</th>
